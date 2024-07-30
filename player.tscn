@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://dpxvkvkhh2bml"]
+[gd_scene load_steps=16 format=3 uid="uid://dpxvkvkhh2bml"]
 
+[ext_resource type="Script" path="res://player.gd" id="1_0w6x6"]
 [ext_resource type="Texture2D" uid="uid://c3wsvdguxjvpy" path="res://assets/player/hurt/player-hurt-1.png" id="1_gmt26"]
 [ext_resource type="Texture2D" uid="uid://c52bfrkj5cav0" path="res://assets/player/hurt/player-hurt-2.png" id="2_buifr"]
 [ext_resource type="Texture2D" uid="uid://ebe4rtwv2m25" path="res://assets/player/idle/player-idle-1.png" id="3_f3add"]
@@ -71,6 +72,7 @@ animations = [{
 }]
 
 [node name="Player" type="Area2D"]
+script = ExtResource("1_0w6x6")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -85,3 +87,5 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.67788
 offset = Vector2(0, -5)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
